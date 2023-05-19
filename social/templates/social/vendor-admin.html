@@ -1,0 +1,111 @@
+{% extends 'social/base.html' %}
+{% load static %}
+{% block content %}
+    <h2 class="is-size-3 mb-4">Vendor Admin- {{ vendor.name}}</h2>
+
+<!--                     Page
+Heading-->
+<!--                    <div class="d-sm-flex align-items-center justify-content-between mb-4">-->
+<!--                        <h1 class="h3 mb-0 text-gray-800"></h1>-->
+<!--                        <a href="{% url 'home-page' %}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i>-->
+<!-- Go back</a>-->
+<!--                    </div>-->
+<br>
+<!--start add product test-->
+<div class="box-primary">
+    <br>
+<!--    <h3>Your Posts</h3>-->
+    <a href="{% url 'post-add-page' %}" class="button is-dark is-uppercase mb-6"><strong>Post Ad</strong> </a>
+<!--        <a href="#" class="button is-dark is-uppercase mb-6"><strong>Add Product</strong> </a>-->
+
+    <br>
+    <br>
+<!--&lt;!&ndash;    {% if products %}&ndash;&gt;-->
+<!--    <table class="table is-fullwidth">-->
+<!--        <thead>-->
+<!--            <th> </th>-->
+<!--            <th>Product</th>-->
+<!--            <th>Price</th>-->
+<!--            <th> Status</th>-->
+<!--        </thead>-->
+
+<!--            <tbody>-->
+<!--&lt;!&ndash;                {% for item in products %}&ndash;&gt;-->
+<!--                <tr>-->
+<!--                    <td>-->
+<!--                        <figure class="image is-1by1 mb-10">-->
+<!--&lt;!&ndash;                            <img src="{{ item.get_thumbnail }}">&ndash;&gt;-->
+<!--                    </figure>-->
+<!--                    </td>-->
+<!--&lt;!&ndash;                    <td>{{ item.title }}</td>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <td>Ksh. {{ item.price }}</td>&ndash;&gt;-->
+<!--                    <td> In store</td>-->
+
+<!--                    <td>-->
+<!--                        <button class="btn btn-delete">-->
+<!--                          <span class="mdi mdi-delete mdi-24px"></span>-->
+<!--                          <span class="mdi mdi-delete-empty mdi-24px"></span>-->
+<!--                          <span>Delete</span>-->
+<!--                        </button>-->
+<!--                    </td>-->
+<!--                       <td>-->
+<!--                        <button class="btn btn-edit">-->
+<!--                          <span class="mdi mdi-delete mdi-24px"></span>-->
+<!--                          <span class="mdi mdi-delete-empty mdi-24px"></span>-->
+<!--                          <span>Edit</span>-->
+<!--                        </button>-->
+<!--                    </td>-->
+<!--                </tr>-->
+<!--&lt;!&ndash;            {% endfor %}&ndash;&gt;-->
+<!--            </tbody>-->
+
+<!--    </table>-->
+<!--&lt;!&ndash;    {% else %}&ndash;&gt;-->
+<!--    <p>You don't have any new posts</p>-->
+<!--&lt;!&ndash;    {% endif %}&ndash;&gt;-->
+    {% if products %}
+    <table class="table is-fullwidth">
+        <thead>
+            <th> </th>
+            <th>Product</th>
+            <th>Price</th>
+            <th> Status</th>
+        </thead>
+
+            <tbody>
+                {% for item in products %}
+                <tr>
+                    <td>
+                        <figure class="image is-1by1 mb-10">
+                            <img src="{{ item.get_thumbnail }}">
+                    </figure>
+                    </td>
+                    <td>{{ item.title }}</td>
+                    <td>Ksh. {{ item.price }}</td>
+                    <td> In store</td>
+
+                    <td>
+                        <button class="btn btn-delete">
+                          <span class="mdi mdi-delete mdi-24px"></span>
+                          <span class="mdi mdi-delete-empty mdi-24px"></span>
+                          <span>Delete</span>
+                        </button>
+                    </td>
+                       <td>
+                        <button class="btn btn-edit">
+                          <span class="mdi mdi-delete mdi-24px"></span>
+                          <span class="mdi mdi-delete-empty mdi-24px"></span>
+                          <span>Edit</span>
+                        </button>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+
+    </table>
+    {% else %}
+    <p>You don't have any Ads</p>
+    {% endif %}
+</div>
+<!--end of test-->
+{% endblock %}

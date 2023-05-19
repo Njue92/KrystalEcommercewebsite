@@ -1,0 +1,167 @@
+{% extends 'social/bhome.html' %}
+{% load static %}
+{% block content %}
+<html>
+<head>
+	<title>Product Page</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+<form
+                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                                aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="fas fa-search fa-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+	<div class="container">
+
+
+
+
+
+
+<!--		<h1>Product Page</h1>-->
+		<div class="product-grid">
+			<div class="product-item">
+				<img src="{% static 'img/carpet.jpg' %}">
+				<h3>Persian Carpet</h3>
+				<p>Description of Product 1</p>
+				<p class="price">Ksh 18,000.00</p>
+				<div class="vendor-location">
+					<i class="fas fa-map-marker-alt"></i>
+					<span><a href="#">Kamkunji</a></span>
+				</div>
+				<button class="add-to-cart">Add to Cart</button>
+								<a class="btn btn-outline-primary">View</a>
+			</div>
+			<div class="product-item">
+				<img src="{% static 'img/gatel.jpg' %}">
+				<h3>Gate lamp</h3>
+				<p>Description of Product 2</p>
+				<p class="price">Ksh 5,000</p>
+				<div class="vendor-location">
+					<i class="fas fa-map-marker-alt"></i>
+					<span><a href="#">Kamkunji</a></span>
+				</div>
+				<button class="add-to-cart">Add to Cart</button>
+								<a class="btn btn-outline-primary">View</a>
+			</div>
+			<div class="product-item">
+				<img src="{% static 'img/laptop.jpg' %}">
+				<h3>Laptop</h3>
+					<p>Description of Product 3</p>
+					<p class="price">Ksh 29,000.00</p>
+					<div class="vendor-location">
+						<i class="fas fa-map-marker-alt"></i>
+						<span><a href="#">Moi Avenue</a></span>
+					</div>
+					<button class="add-to-cart">Add to Cart</button>
+								<a class="btn btn-outline-primary">View</a>
+
+			</div>
+			<div class="product-item">
+				<img src="{% static 'img/cooker.jpg' %}">
+				<h3>Cooker</h3>
+				<p>Description of Product 4</p>
+				<p class="price">Ksh 39,000.99</p>
+				<a href="#">
+					<div class="vendor-location">
+					<i class="fas fa-map-marker-alt"></i>
+					<span>Kamkunji</span>
+				</div>
+					</a>
+				<button class="add-to-cart">Add to Cart</button>
+								<a class="btn btn-outline-primary">View</a>
+
+			</div>
+			<!-- Repeat the product-item divs for each product -->
+		</div>
+	</div>
+
+	{% include 'social/footer.html' %}
+</body>
+<style>
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+}
+
+.product-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.product-item img {
+  max-width: 100%;
+  height: auto;
+}
+
+.product-item h3 {
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.product-item p {
+  font-size: 14px;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.vendor-location {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.vendor-location i {
+  margin-right: 5px;
+}
+
+.add-to-cart {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+</style>
+</html>
+
+
+{% endblock %}

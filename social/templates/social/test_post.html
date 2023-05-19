@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Create Post - Facebook</title>
+	<style type="text/css">
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			background-color: #f0f2f5;
+		}
+
+		.container {
+			max-width: 600px;
+			margin: 0 auto;
+			padding: 20px;
+			background-color: #fff;
+			box-shadow: 0 0 10px rgba(0,0,0,.1);
+			border-radius: 5px;
+			box-sizing: border-box;
+		}
+
+		h1 {
+			font-size: 24px;
+			margin: 0 0 20px 0;
+		}
+
+		form {
+			display: flex;
+			flex-direction: column;
+		}
+
+		label {
+			font-weight: bold;
+			margin-bottom: 5px;
+			color: #1c1e21;
+		}
+
+		input[type="text"], textarea {
+			margin-bottom: 10px;
+			padding: 10px;
+			font-size: 16px;
+			border: none;
+			border-radius: 5px;
+			box-shadow: 1px 1px 5px #ccc;
+			resize: none;
+			font-family: inherit;
+			box-sizing: border-box;
+			background-color: #f0f2f5;
+		}
+
+		textarea {
+			height: 100px;
+		}
+
+		input[type="file"] {
+			margin-bottom: 10px;
+		}
+
+		.add-post-btn {
+			margin-top: 10px;
+			padding: 10px 20px;
+			font-size: 16px;
+			border: none;
+			border-radius: 20px;
+			background-color: #1877f2;
+			color: #fff;
+			cursor: pointer;
+			box-shadow: 0 4px 4px rgba(0,0,0,.1);
+		}
+
+		.add-post-btn:hover {
+			background-color: #166fe5;
+		}
+
+		.add-post-btn:active {
+			background-color: #146bd1;
+			box-shadow: none;
+		}
+
+		.add-post-btn:focus {
+			outline: none;
+		}
+
+		.add-post-btn:disabled {
+			background-color: #c3c3c3;
+			color: #fff;
+			cursor: default;
+			box-shadow: none;
+		}
+
+		.add-post-btn:disabled:hover {
+			background-color: #c3c3c3;
+		}
+
+		.add-post-btn:disabled:active {
+			background-color: #c3c3c3;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Create Post</h1>
+		<form>
+			<label for="post-title">Title:</label>
+			<input type="text" id="post-title" name="post-title" placeholder="Enter title">
+
+			<label for="post-body">Body:</label>
+			<textarea id="post-body" name="post-body" placeholder="Enter text"></textarea>
+
+			<label for="post-image">Image:</label>
+			<input type="file" id="post-image" name="post-image">
+
+			<button type="submit" class="add-post-btn" disabled>Add Post</button>
+		</form>
+	</div>
+
+	<script type="text/javascript">
+		// Enable "Add Post" button

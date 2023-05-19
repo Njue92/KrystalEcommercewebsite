@@ -1,0 +1,345 @@
+{% extends 'social/bhome.html' %}
+{% load static %}
+{% block content %}
+<html xmlns:text-align="http://www.w3.org/1999/xhtml" xmlns:color="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Product Page</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+<div class="container">
+    <div class="sidebar">
+		<div class="category-table">
+        <ul>
+<!--			<div class="dropdown">-->
+<!--           	 <li><span><a href="#">Category 1</a></span></li>-->
+<!--				<div class="dropdown-content">-->
+<!--  					<p>Hello World!</p>-->
+       <div class="dropdown">
+              <li class="dropbtn"><a href="#">Home appliances &#155;</a></li>
+                <div class="dropdown-content">
+                    <a href="#">Water heaters</a>
+                    <a href="#">Refrigerators</a>
+                      <a href="#">Microwave ovens</a>
+                      <a href="#">Dishwashers</a>
+                      <a href="#">Kitchen stoves</a>
+                                            <a href="#">Washing machines</a>
+
+  </div>
+
+            </div>
+
+
+			                        <div class="dropdown">
+              <li class="dropbtn"><a href="#">Electronics &#155;</a></li>
+                  <div class="dropdown-content">
+
+    <a href="#">TV sets</a>
+                      <a href="#">Radio receivers</a>
+                      <a href="#">Digital cameras</a>
+                      <a href="#">Computers</a>
+                                            <a href="#">video game consoles</a>
+
+  </div>
+
+            </div>
+                                  <div class="dropdown">
+              <li class="dropbtn"><a href="#">Cars & accessories &#155;</a></li>
+                  <div class="dropdown-content">
+    <a href="#">Cars</a>
+    <a href="#">Buses & Microbuses</a>
+                      <a href="#">Heavy Equipment</a>
+                      <a href="#">Motorcycles & Scotters</a>
+                      <a href="#">Trucks and Trailers</a>
+                                            <a href="#">Vehicle Parts & Accessories</a>
+
+  </div>
+
+            </div>
+              <div class="dropdown">
+              <li class="dropbtn"><a href="#">Clothing &#155;</a></li>
+                  <div class="dropdown-content">
+    <a href="#">Cars</a>
+    <a href="#">Buses & Microbuses</a>
+                      <a href="#">Heavy Equipment</a>
+                      <a href="#">Motorcycles & Scotters</a>
+                      <a href="#">Trucks and Trailers</a>
+                                            <a href="#">Vehicle Parts & Accessories</a>
+
+  </div>
+
+            </div>
+
+			                                <div class="dropdown">
+              <li class="dropbtn"><a href="#">Groceries &#155;</a></li>
+                  <div class="dropdown-content">
+    <a href="#">Cars</a>
+    <a href="#">Buses & Microbuses</a>
+                      <a href="#">Heavy Equipment</a>
+                      <a href="#">Motorcycles & Scotters</a>
+                      <a href="#">Trucks and Trailers</a>
+                                            <a href="#">Vehicle Parts & Accessories</a>
+
+  </div>
+
+            </div>
+
+
+
+<!--            <li><a href="#">Category 3</a></li>-->
+<!--            <li><a href="#">Category 4</a></li>-->
+<!--            <li><a href="#">Category 5</a></li>-->
+        </ul>
+			</div>
+    </div>
+    <div class="main-content">
+        <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+            <div class="input-group">
+                <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                       aria-label="Search" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="button">
+                        <i class="fas fa-search fa-sm"></i>
+                    </button>
+                </div>
+            </div>
+            <br>
+
+        </form>
+        <h3 class="popular">Popular</h3>
+            <!-- Product items here -->
+
+        <div class="product-grid">
+
+            			<div class="product-item">
+				<img src="{% static 'img/carpet.jpg' %}">
+				<h3>Persian Carpet</h3>
+				<p>Description of Product 1</p>
+				<p class="price">Ksh 18,000.00</p>
+				<div class="vendor-location">
+					<i class="fas fa-map-marker-alt"></i>
+					<span><a href="#">Kamkunji</a></span>
+				</div>
+				<button class="add-to-cart">Add to Cart</button>
+								<a class="btn btn-outline-primary">View</a>
+			</div>
+			<div class="product-item">
+				<img src="{% static 'img/gatel.jpg' %}">
+				<h3>Gate lamp</h3>
+				<p>Description of Product 2</p>
+				<p class="price">Ksh 5,000</p>
+				<div class="vendor-location">
+					<i class="fas fa-map-marker-alt"></i>
+					<span><a href="#">Kamkunji</a></span>
+				</div>
+				<button class="add-to-cart">Add to Cart</button>
+								<a class="btn btn-outline-primary">View</a>
+			</div>
+			<div class="product-item">
+				<img src="{% static 'img/laptop.jpg' %}">
+				<h3>Laptop</h3>
+					<p>Description of Product 3</p>
+					<p class="price">Ksh 29,000.00</p>
+					<div class="vendor-location">
+						<i class="fas fa-map-marker-alt"></i>
+						<span><a href="#">Moi Avenue</a></span>
+					</div>
+					<button class="add-to-cart">Add to Cart</button>
+								<a href="{% url 'view_product' %}" class="btn btn-outline-primary">View</a>
+
+			</div>
+			<div class="product-item">
+				<img src="{% static 'img/cooker.jpg' %}">
+				<h3>Cooker</h3>
+				<p>Description of Product 4</p>
+				<p class="price">Ksh 39,000.99</p>
+				<a href="#">
+					<div class="vendor-location">
+					<i class="fas fa-map-marker-alt"></i>
+					<span>Kamkunji</span>
+				</div>
+					</a>
+				<button class="add-to-cart">Add to Cart</button>
+								<a class="btn btn-outline-primary">View</a>
+
+			</div>
+        </div>
+    </div>
+</div>
+
+{% include 'social/footer.html' %}
+</body>
+<style>
+/* Global Styles */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+}
+
+/* Sidebar Styles */
+
+.sidebar {
+  flex: 0 0 20%;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  margin-bottom: 10px;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #000;
+}
+
+/* Main Content Styles */
+
+.main-content {
+  flex: 0 0 80%;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+}
+
+.product-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.product-item img {
+  max-width: 100%;
+  height: auto;
+}
+
+.product-item h3 {
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.product-item p {
+  font-size: 14px;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.vendor-location {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.vendor-location i {
+  margin-right: 5px;
+}
+
+.add-to-cart {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+
+.category-table {
+  margin-bottom: 20px;
+}
+
+.category-table ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.category-table li {
+  padding: 10px;
+}
+
+.category-table a {
+  color: #333;
+  text-decoration: none;
+}
+
+.category-table .active {
+  background-color: #ccc;
+}
+
+.dropbtn {
+  background-color: white;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #4e73df;}
+
+.popular {
+  color: #484848;
+  margin-left: 20px;
+
+}
+</style>
+
+{% endblock %}
