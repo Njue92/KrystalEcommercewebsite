@@ -5,6 +5,7 @@ from django.contrib.auth import login,logout
 from django.contrib.auth.decorators import login_required
 from .forms import CreateUserForm, LoginUserForm , ProductForm
 from django.utils.text import slugify
+from .models import *
 
 from products.models import Products
 
@@ -29,9 +30,9 @@ def become_vendor(request):
     else:
         form = CreateUserForm()
 
-    context = {'form':form}
+    # context = {'form':form}
 
-    return render(request, 'social/register.html', context)
+    return render(request, 'social/register.html', {'form':form})
 
 
 @login_required()
@@ -111,7 +112,7 @@ def testbase(request):
     return render(request, 'social/bhome.html', context)
 
 
-def login(request):
+def login1(request):
     context = {}
     return render(request, 'social/login.html', context)
 
@@ -164,3 +165,32 @@ def home_page(request):
 def view_product(request):
     context = {}
     return render(request, 'social/view_product.html', context)
+
+
+def become_vend(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+
+        if form.is_valid():
+            user= form.save()
+
+            login(request, user)
+
+            vendor = Vendor.objects.create(name=user.username, created_by=user)
+
+            return redirect('vendor_adm')
+
+    else:
+        form = UserCreationForm()
+
+    return render(request, 'social/become_vend.html', {'form': form})
+
+
+@login_required
+def vendor_adm(request):
+    vendor = request.user.vendor
+    goods = vendor.products.all()
+
+    return render(request,'social/vendor_adm.html',{'vendor': vendor, 'goods': goods} )
+
+
